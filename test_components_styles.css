@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+body{
+    background-color: azure;
+}
+.navbar{
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+    background-color: #003580;   
+}
+.navcontainer{
+    display: flex;
+    width: 100%;    
+    padding: 10px 10px;
+}
+.companyname{
+    width: 70%;
+    font-size: 30px;
+    font-weight: 700;
+}
+.buttonspace{
+    width: 30%;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons{
+    font-weight: bold;
+    border-radius: 10px;
+    width: 32%;
+    cursor: pointer;
+}
+.cursor{
+    
+    text-decoration: #003580;
+}
+.filter{
+    padding: 10px 20px;
+    background-color: #003580;  
+}
+.introtext{
+    color: white;
+}
+label{
+    border: #003580 10px bold;
+}
+.search{
+    display: flex;
+    flex-direction: column;
+}
+.searchbar{
+    width: 40%;
+}
+.searchbutton{
+    width: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    color: #ff8000;
+}
+#listings{
+    width: 100%;
+}
+fieldset{
+    padding: 15px;
+    border: 15px solid #003580;
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.listing{
+    width: 23%;
+    
+}
+legend{
+    background-color: white;
+    color: #3daeff;
+    width: fit-content;
+    font-size: 30px;
+    font-weight: 700px;
+}
+.reservebutton{
+    background-color: #003580;
+    color: white;
+    font-size: medium;
+    border-radius: 5px;
+    width: 50%;
+    cursor: pointer;
+}
+#footer{
+    margin-top: 30px;
+    background-color: #003580;
+}
+.trademark{
+    text-align: center;
+    color: white;
+    font-size: medium;
+}
+.links p{
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    color: #ff8000;
+}
+
+.links ul {
+    color: white;
+    display: flex;
+    list-style: none;
+    text-align: center;
+
+}
