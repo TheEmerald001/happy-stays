@@ -3,14 +3,19 @@ import React from "react";
 function Filter(){
     return (
         <>
-            <div>
-                <form>
-                    <label>
-                        Search Listings 
-                        <input type="text" name="search"></input>
-                        <input type="submit" value="submit"></input>
-                    </label>
-                </form>
+            <div className="filter">
+                <div className="introtext">
+                    <p>
+                        <h2>Find Your Next Happy Stay place</h2>
+                        <h5>See and Search top listings all over the globe</h5>
+                    </p>
+                </div>
+                <div className="search">
+                    <form>
+                        <input class="searchbar" type="text" name="city" placeholder= "Which city are you visiting?"/>
+                        <input class="searchbutton" type="submit" value="Search"/>
+                    </form>
+                </div>
             </div>
         </>
     )
