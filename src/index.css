@@ -34,6 +34,7 @@ body{
   font-weight: bold;
   border-radius: 10px;
   width: 32%;
+  height: 30px;
   cursor: pointer;
 }
 .cursor{
@@ -64,19 +65,30 @@ label{
   padding: 5px;
   color: #ff8000;
 }
-.reisterform {
+.registerform {
   display: flex;
-  justify-content: center;
-  margin-top: 5rem;
+  flex-direction: column;
+}
+.titles{
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  color: #003580;
+}
+.forms{
+ margin: auto;
+ width: 38%;
 }
 input {
-  display: block;
-  width: 20rem;
   height: 2rem;
   padding: 0.5rem;
   font-size: 1.1em;
   font-weight: 500;
   margin-bottom: 2rem;
+}
+.proceed{
+  text-align: center;
+  width: 35%;
 }
 
 button:hover {

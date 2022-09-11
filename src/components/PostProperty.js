@@ -23,14 +23,14 @@ function PostProperty({user_id, owner_id, onAddProperty}) {
            }),
          })
            .then((r) => r.json())
-           .then((newListing) => onAddListing(newListing));
+           .then((newListing) => onAddProperty(newListing));
       }
      
      return (
        <>
        <div className="registerform">
-          <h5>Post a Stay</h5>
-          <form onSubmit={handleSubmit}>
+          <div className="titles">Post a Stay</div>
+          <form className="forms" onSubmit={handleSubmit}>
           <input
             type="text"
             value={name}
@@ -38,7 +38,7 @@ function PostProperty({user_id, owner_id, onAddProperty}) {
           />
           <input
             type="text"
-            value={username}
+            value={city}
             placeholder="e.g. Nairobi"
           />
           <input
@@ -48,8 +48,8 @@ function PostProperty({user_id, owner_id, onAddProperty}) {
           />
           <input
             type="text"
-            value={price}
-            placeholder="$0.00"
+            value={location}
+            placeholder="maps/url"
           />
           <input
             type="text"
@@ -61,7 +61,7 @@ function PostProperty({user_id, owner_id, onAddProperty}) {
             value={rating}
             placeholder="1-10"
           />
-          <button type="submit">Post Property</button>  
+          <button className="proceed" type="submit">Post Property</button>  
           {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
         </form>
         </div>

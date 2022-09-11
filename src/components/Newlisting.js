@@ -31,15 +31,17 @@ function NewListing({ user_id, property_id, onAddOwner}){
         })
           .then((r) => r.json())
           .then((newOwner) => onAddOwner(newOwner));
-          PostProperty();
+          return (
+            <PostProperty/>
+          )
     }
 
     //controlled from the code here
     return (
       <>
       <div className="registerform">
-          <h5>Create An Owners Account</h5>
-          <form onSubmit={handleSubmit}>
+          <div className="titles">Create An Owners Account</div>
+          <form className="forms" onSubmit={handleSubmit}>
           <input
             type="text"
             value={name}
@@ -60,7 +62,7 @@ function NewListing({ user_id, property_id, onAddOwner}){
             value={phone}
             placeholder="254722000000"
           />
-          <button type="submit">Create Account</button>  
+          <button className="proceed" type="submit">Create Account</button>  
           {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
         </form>
         </div>

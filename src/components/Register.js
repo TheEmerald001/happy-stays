@@ -18,12 +18,12 @@ function Register({onAddUser}) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: name,
-            username: username,
-            email: email,
-            phone: phone,
-            age: age,
-            password: password,
+            name: setName,
+            username: setUserName,
+            email: setEmail,
+            phone: setPhone,
+            age: setAge,
+            password: setPassword,
           }),
         })
           .then((r) => r.json())
@@ -33,41 +33,44 @@ function Register({onAddUser}) {
     return (
       <>
         <div className="registerform">
-          <h5>Create a Stays Account</h5>
-          <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={name}
-            placeholder="John Doe"
-          />
-          <input
-            type="text"
-            value={username}
-            placeholder="Johnny"
-          />
-          <input
-            type="text"
-            value={email}
-            placeholder="john@doe.com"
-          />
-          <input
-            type="text"
-            value={phone}
-            placeholder="254722000000"
-          />
-          <input
-            type="text"
-            value={age}
-            placeholder="80"
-          />
-          <input
-            type="text"
-            value={password}
-            placeholder="******"
-          />  
-          <button type="submit">Create Account</button>  
-          {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
-        </form>
+          <div className="titles">Create a Stays Account</div>
+          <div >
+            <form className="forms" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                value={name}
+                placeholder="Name: John Doe"
+              />
+              <input
+                type="text"
+                value={username}
+                placeholder="Username: Johnny"
+              />
+              <input
+                type="text"
+                value={email}
+                placeholder="Email: john@doe.com"
+              />
+              <input
+                type="text"
+                value={phone}
+                placeholder="Phone Number: 254722000000"
+              />
+              <input
+                type="text"
+                value={age}
+                placeholder="Age: 80"
+              />
+              <input
+                type="text"
+                value={password}
+                placeholder="Password: ******"
+              />  
+              <button className="proceed" type="submit">Create Account</button>  
+              {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
+            </form>
+          </div>
+          
         </div>
       </>
 

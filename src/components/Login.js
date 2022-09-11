@@ -12,18 +12,16 @@ function Login(props) {
   }
  
   return (
-    <div>
-      Login<br /><br />
-      <div>
-        Username<br />
-        <input type="text" {...username} autoComplete="new-password" />
-      </div>
-      <div style={{ marginTop: 10 }}>
-        Password<br />
-        <input type="password" {...password} autoComplete="new-password" />
-      </div>
+    <div className='forms'>
+      <div className='titles'>Log In </div>
+      <form>
+        <label>Username</label>
+        <input type="text"/>
+        <label>pasword</label>
+        <input type="text"/>
+      </form>
       {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
-      <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
+      <input className='proceed' type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
     </div>
   );
 }

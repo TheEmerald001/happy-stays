@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 
 import Newlisting from './Newlisting'
 import Login from './Login';
 import Register from './Register';
+import Home from './Home';
 
 
 function NavBar() {
@@ -11,18 +12,20 @@ function NavBar() {
     <nav className='navbar'>
       <div className="navcontainer">
             <div className="companyname">Happy Stays</div>
-            <div class="buttonspace">
+            <div className="buttonspace">
               <BrowserRouter>
                 <div>
-                    <NavLink activeClassName="active" to="/listings"><button className='buttons'><a class="cursor" href="">Add a listing</a></button></NavLink>
-                    <NavLink activeClassName="active" to="/register"><button className='buttons'><a class="cursor" href="#">Log in</a></button></NavLink>
-                    <NavLink activeClassName="active" to="/login"><button className='buttons'><a class="cursor"  href="">Register</a></button></NavLink>
+                    <NavLink to="/listings"><button className='buttons'>Add a listing</button></NavLink>
+                    <NavLink to="/register"><button className='buttons'>Log in</button></NavLink>
+                    <NavLink to="/login"><button className='buttons'>Register</button></NavLink>
                 </div>
-                <Switch>
-                  <Route path="/listings" component={Newlisting}/>
-                  <Route path="/register" component={Register}/>
-                  <Route path="/login" component={Login}/>
-                </Switch>
+                <div>
+                <Routes>
+                  <Route path="/listings" element={Newlisting}/>
+                  <Route path="/register" element={Register}/>
+                  <Route path="/login" element={Login}/>
+                </Routes>
+                </div>
               </BrowserRouter>  
             </div>
       </div> 
