@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Navlink } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 
 import Newlisting from './Newlisting'
 import Login from './Login';
@@ -14,9 +14,9 @@ function NavBar() {
             <div class="buttonspace">
               <BrowserRouter>
                 <div>
-                    <Navlink activeClassName="active" to="/listings"><button className='buttons'><a class="cursor" href="">Add a listing</a></button></Navlink>
-                    <Navlink activeClassName="active" to="/register"><button className='buttons'><a class="cursor" href="#">Log in</a></button></Navlink>
-                    <Navlink activeClassName="active" to="/login"><button className='buttons'><a class="cursor"  href="">Register</a></button></Navlink>
+                    <NavLink activeClassName="active" to="/listings"><button className='buttons'><a class="cursor" href="">Add a listing</a></button></NavLink>
+                    <NavLink activeClassName="active" to="/register"><button className='buttons'><a class="cursor" href="#">Log in</a></button></NavLink>
+                    <NavLink activeClassName="active" to="/login"><button className='buttons'><a class="cursor"  href="">Register</a></button></NavLink>
                 </div>
                 <Switch>
                   <Route path="/listings" component={Newlisting}/>

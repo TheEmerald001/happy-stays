@@ -8,6 +8,7 @@
 // iii. Access a post property form
 
 import react, { useState } from "react";
+import PostProperty from "./PostProperty";
 
 function NewListing({ user_id, property_id, onAddOwner}){
     const [name, setName] = useState("");
@@ -30,6 +31,7 @@ function NewListing({ user_id, property_id, onAddOwner}){
         })
           .then((r) => r.json())
           .then((newOwner) => onAddOwner(newOwner));
+          PostProperty();
     }
 
     //controlled from the code here

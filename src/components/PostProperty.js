@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-function PostListing({user_id, owner_id, onAddProperty}) {
+function PostProperty({user_id, owner_id, onAddProperty}) {
      const [name, setName] = useState("");
      const [city, setCity] = useState("");
      const [image, setImage] = useState("");
@@ -70,4 +70,4 @@ function PostListing({user_id, owner_id, onAddProperty}) {
      
 }
 
-export default PostListing;
+export default PostProperty;
