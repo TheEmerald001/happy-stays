@@ -33,7 +33,38 @@ function NewListing({ user_id, property_id, onAddOwner}){
     }
 
     //controlled from the code here
-    return <form onSubmit={handleSubmit}>
+    return (
+      <>
+      <div className="registerform">
+          <h5>Create An Owners Account</h5>
+          <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={name}
+            placeholder="John Doe"
+          />
+          <input
+            type="text"
+            value={username}
+            placeholder="Johnny"
+          />
+          <input
+            type="text"
+            value={email}
+            placeholder="john@doe.com"
+          />
+          <input
+            type="text"
+            value={phone}
+            placeholder="254722000000"
+          />
+          <button type="submit">Create Account</button>  
+          {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
+        </form>
+        </div>
+      </>
 
-    </form>    
+    )    
 }
+
+export default NewListing;
