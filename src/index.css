@@ -6,42 +6,40 @@
   font-family: 'Nunito', sans-serif;
 }
 body{
+  margin: 0;
   background-color: azure;
 }
 .navbar{
   width: 100%;
   color: white;
   margin: 0 auto;
-  background-color: #003580;   
-}
-.navcontainer{
+  background-color: #003580;
   display: flex;
-  width: 100%;    
-  padding: 10px 10px;
+  justify-content: space-around;
+  gap: 2rem; 
+  padding: 0 1rem; 
+  align-items: center;
+}
+.navbar ul{
+  display: flex;
 }
 .companyname{
   width: 70%;
+  padding-left: 10%;
   font-size: 30px;
   font-weight: 700;
 }
-.linkings{
+a{
   text-decoration: none;
   color: white;
 }
 ul{
   list-style: none;
 }
-
-.buttonspace{
-  width: 30%;
-  float: right;
-  display: flex;
-  justify-content: space-between;
-}
 .buttons{
   font-weight: bold;
   border-radius: 10px;
-  width: 32%;
+  width: 40%;
   height: 30px;
   cursor: pointer;
 }
@@ -56,12 +54,10 @@ ul{
 .introtext{
   color: white;
 }
-label{
-  border: #003580 10px bold;
-}
 .search{
   display: flex;
   flex-direction: column;
+  padding: 10px 20px;
 }
 .searchbar{
   width: 40%;
