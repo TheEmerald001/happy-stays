@@ -15,26 +15,46 @@ function NewListing({ user_id, property_id, onAddOwner}){
     const [username, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    function handleSubmit(e) {
-        e.preventDefault();
-        fetch("http://localhost:9292/owners", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: name,
-            username: username,
-            email: email,
-            phone: phone,
-          }),
-        })
-          .then((r) => r.json())
-          .then((newOwner) => onAddOwner(newOwner));
-          return (
-            <PostProperty/>
-          )
+
+    const handleInputChange = (e) => {
+      const {id , value} = e.target;
+      if(id === "name"){
+          setName(value);
+      }
+      if(id === "userName"){
+          setUserName(value);
+      }
+      if(id === "email"){
+          setEmail(value);
+      }
+      if(id === "setPhone"){
+        setPhone(value);
+      }     
     }
+    //debugger
+    const handleSubmit  = () => {
+      console.log(name, username, email, phone);
+    }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     fetch("http://localhost:9292/owners", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         name: name,
+    //         username: username,
+    //         email: email,
+    //         phone: phone,
+    //       }),
+    //     })
+    //       .then((r) => r.json())
+    //       .then((newOwner) => onAddOwner(newOwner));
+    //       return (
+    //         <PostProperty/>
+    //       )
+    // }
 
     //controlled from the code here
     return (
@@ -43,27 +63,35 @@ function NewListing({ user_id, property_id, onAddOwner}){
           <div className="titles">Create An Owners Account</div>
           <form className="forms" onSubmit={handleSubmit}>
           <input
-            type="text"
-            value={name}
-            placeholder="John Doe"
-          />
+                type="text"
+                name="name"
+                value={name}
+                onChange = {(e) => handleInputChange(e)}
+                id="name"
+                placeholder="Name: John Doe"
+              />
           <input
             type="text"
             value={username}
-            placeholder="Johnny"
+            onChange = {(e) => handleInputChange(e)}
+            id="userName"
+            placeholder="Username: Johnny"
           />
           <input
             type="text"
             value={email}
-            placeholder="john@doe.com"
-          />
+            onChange = {(e) => handleInputChange(e)}
+            id="email"
+            placeholder="Email: Johnny@123.com"
+            />
           <input
             type="text"
             value={phone}
-            placeholder="254722000000"
+            onChange = {(e) => handleInputChange(e)}
+            id="setPhone"
+            placeholder="Phone: 25472200000"
           />
-          <button className="proceed" type="submit">Create Account</button>  
-          {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
+          <button className="proceed" type="submit">Create Account</button>
         </form>
         </div>
       </>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, setState } from "react";
 
-function Register({onAddUser}) {
+function Register() {
     // All constants to be used in this registaration form are used here
+    
     const [name, setName] = useState("");
     const [username, setUserName] = useState("");
     const [email, setEmail] = useState("");
@@ -9,27 +10,55 @@ function Register({onAddUser}) {
     const [age, setAge] = useState("");
     const [password, setPassword] = useState("");
 
-    //Here is a hanle submit function that shall allow updating this data on the backend
-    function handleSubmit(e) {
-        e.preventDefault();
-        fetch("http://localhost:9292/users", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: setName,
-            username: setUserName,
-            email: setEmail,
-            phone: setPhone,
-            age: setAge,
-            password: setPassword,
-          }),
-        })
-          .then((r) => r.json())
-          .then((newUser) => onAddUser(newUser));
+    const handleInputChange = (e) => {
+      const {id , value} = e.target;
+      if(id === "name"){
+          setName(value);
+      }
+      if(id === "userName"){
+          setUserName(value);
+      }
+      if(id === "email"){
+          setEmail(value);
+      }
+      if(id === "setPhone"){
+        setPhone(value);
+      }
+      if(id === "setAge"){
+        setAge(value);
+      }
+      if(id === "password"){
+          setPassword(value);
+      }     
+    }
+    //debugger
+    const handleSubmit  = () => {
+      console.log(name, username, email, phone, age, password);
     }
 
+    //Here is a handle submit function that shall allow updating this data on the backend
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     fetch("http://localhost:9292/users", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         name: name,
+    //         username: username,
+    //         email: email,
+    //         phone: phone,
+    //         age: age,
+    //         password: password,
+    //       }),
+    //     })
+    //       .then((r) => r.json())
+    //       .then((newUser) => onAddUser(newUser));
+    // }
+    
+  // Below is controller code, that shall provide a form on
+  // user clicking 'REGISTER'
     return (
       <>
         <div className="registerform">
@@ -38,46 +67,55 @@ function Register({onAddUser}) {
             <form className="forms" onSubmit={handleSubmit}>
               <input
                 type="text"
+                name="name"
                 value={name}
+                onChange = {(e) => handleInputChange(e)}
+                id="name"
                 placeholder="Name: John Doe"
               />
               <input
                 type="text"
                 value={username}
+                onChange = {(e) => handleInputChange(e)}
+                id="userName"
                 placeholder="Username: Johnny"
               />
               <input
                 type="text"
                 value={email}
-                placeholder="Email: john@doe.com"
+                onChange = {(e) => handleInputChange(e)}
+                id="setmail"
+                placeholder="Email: Johnny@123.com"
               />
               <input
                 type="text"
                 value={phone}
-                placeholder="Phone Number: 254722000000"
+                onChange = {(e) => handleInputChange(e)}
+                id="setPhone"
+                placeholder="Phone: (***)-(**)-(***)-(***)"
               />
               <input
                 type="text"
                 value={age}
+                onChange = {(e) => handleInputChange(e)}
+                id="setAge"
                 placeholder="Age: 80"
               />
               <input
-                type="text"
+                type="password"
                 value={password}
+                onChange = {(e) => handleInputChange(e)}
+                id="password"
                 placeholder="Password: ******"
               />  
-              <button className="proceed" type="submit">Create Account</button>  
-              {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
+              <button className="proceed" type="submit">Create Account</button>
             </form>
           </div>
           
         </div>
       </>
 
-    );
-
-    // Below is controller code, that shall provide a form on
-    // user clicking 'REGISTER'   
+    );   
 }
 
 export default Register;

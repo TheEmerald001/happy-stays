@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, setState } from 'react';
  
 function Login(props) {
-  const username = useFormInput('');
-  const password = useFormInput('');
+  const [username, setUserName] = useState('');
+  const [password, setPassword] =useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  //capture input data
+  const handleInputChange = (e) => {
+    const {id , value} = e.target;
+    if(id === "userName"){
+        setUserName(value);
+    }
+    if(id === "password"){
+        setPassword(value);
+    }     
+  }
  
   // handle button click of login form
   const handleLogin = () => {
-    props.history.push('/Home');
+    console.log(username, password);
   }
  
   return (
@@ -16,26 +27,24 @@ function Login(props) {
       <div className='titles'>Log In </div>
       <form>
         <label>Username</label>
-        <input type="text"/>
+        <input
+          type="text"
+          value={username}
+          onChange = {(e) => handleInputChange(e)}
+          id="userName"
+        />
         <label>pasword</label>
-        <input type="text"/>
+        <input
+          type="password"
+          value={password}
+          onChange = {(e) => handleInputChange(e)}
+          id="password"
+        />
       </form>
       {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
       <input className='proceed' type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
     </div>
   );
-}
- 
-const useFormInput = initialValue => {
-  const [value, setValue] = useState(initialValue);
- 
-  const handleChange = e => {
-    setValue(e.target.value);
-  }
-  return {
-    value,
-    onChange: handleChange
-  }
 }
  
 export default Login;
