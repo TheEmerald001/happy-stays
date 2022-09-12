@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 import Newlisting from './Newlisting'
 import Login from './Login';
@@ -11,23 +11,16 @@ function NavBar() {
   return (
     <nav className='navbar'>
       <div className="navcontainer">
-            <div className="companyname">Happy Stays</div>
-            <div className="buttonspace">
-              <BrowserRouter>
-                <div>
-                    <NavLink to="/listings"><button className='buttons'>Add a listing</button></NavLink>
-                    <NavLink to="/register"><button className='buttons'>Log in</button></NavLink>
-                    <NavLink to="/login"><button className='buttons'>Register</button></NavLink>
-                </div>
-                <div>
-                <Routes>
-                  <Route path="/listings" element={Newlisting}/>
-                  <Route path="/register" element={Register}/>
-                  <Route path="/login" element={Login}/>
-                </Routes>
-                </div>
-              </BrowserRouter>  
+          <div className="companyname"><Link className='linkings' to='/'>Happy Stays</Link></div>
+          <div className="buttonspace">
+            <div className='navbuttons'>
+              <ul>
+                <li><Link to='/listings'><button className='buttons'>List</button></Link></li>
+                <li><Link to='/login'><button className='buttons'>Login</button></Link></li>
+                <li><Link to='/register'><button className='buttons'>Register</button></Link></li>
+              </ul>
             </div>
+          </div>
       </div> 
     </nav>
   );

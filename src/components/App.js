@@ -1,5 +1,5 @@
 import React from 'react';
-// import { BrowserRouter, Switch, Route, Navlink } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 import '../App.css';
 import NavBar from "./Navbar";
@@ -16,13 +16,15 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Filter/>
-      <Home/>      
-      {/* <Listings/> */}
-      <Register/>
-      <Login/>
-      <NewListing/>
-      <PostProperty/>
+      <div className='routescontainer'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/listings' element={<PostProperty />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </div>
+      
     </>
   );
 }

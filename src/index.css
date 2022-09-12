@@ -24,6 +24,14 @@ body{
   font-size: 30px;
   font-weight: 700;
 }
+.linkings{
+  text-decoration: none;
+  color: white;
+}
+ul{
+  list-style: none;
+}
+
 .buttonspace{
   width: 30%;
   float: right;
