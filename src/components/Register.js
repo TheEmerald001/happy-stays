@@ -1,4 +1,4 @@
-import React, { useState, setState } from "react";
+import React, { useState } from "react";
 
 function Register() {
     // All constants to be used in this registaration form are used here
@@ -32,30 +32,29 @@ function Register() {
       }     
     }
     //debugger
-    const handleSubmit  = () => {
-      console.log(name, username, email, phone, age, password);
-    }
+    // const handleSubmit  = () => {
+    //   console.log(name, username, email, phone, age, password);
+    // }
 
     //Here is a handle submit function that shall allow updating this data on the backend
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     fetch("http://localhost:9292/users", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         name: name,
-    //         username: username,
-    //         email: email,
-    //         phone: phone,
-    //         age: age,
-    //         password: password,
-    //       }),
-    //     })
-    //       .then((r) => r.json())
-    //       .then((newUser) => onAddUser(newUser));
-    // }
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("http://localhost:9292/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            username: username,
+            email: email,
+            phone_number: phone,
+            age: age,
+            password: password,
+          }),
+        })
+          .then((r) => r.json())
+    }
     
   // Below is controller code, that shall provide a form on
   // user clicking 'REGISTER'
@@ -84,8 +83,8 @@ function Register() {
                 type="text"
                 value={email}
                 onChange = {(e) => handleInputChange(e)}
-                id="setmail"
-                placeholder="Email: Johnny@123.com"
+                id="email"
+                placeholder="Email: johhny@doe.com"
               />
               <input
                 type="text"

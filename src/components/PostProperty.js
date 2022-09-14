@@ -1,5 +1,5 @@
-import React, { useState, setState } from "react";
-function PostProperty({user_id, owner_id, onAddProperty}) {
+import React, { useState } from "react";
+function PostProperty({user_id, owner_id}) {
      const [name, setName] = useState("");
      const [city, setCity] = useState("");
      const [image, setImage] = useState("");
@@ -29,29 +29,28 @@ function PostProperty({user_id, owner_id, onAddProperty}) {
         }     
       }
       //debugger
-      const handleSubmit  = () => {
-        console.log(name, city, image, location, price, rating);
-      }
+      // const handleSubmit  = () => {
+      //   console.log(name, city, image, location, price, rating);
+      // }
 
-    //  function handleSubmit(e) {
-    //      e.preventDefault();
-    //      fetch("http://localhost:9292/listings", {
-    //        method: "POST",
-    //        headers: {
-    //          "Content-Type": "application/json",
-    //        },
-    //        body: JSON.stringify({
-    //          name: name,
-    //          city: city,
-    //          image: image,
-    //          price: price,
-    //          location: location,
-    //          rating: rating,
-    //        }),
-    //      })
-    //        .then((r) => r.json())
-    //        .then((newListing) => onAddProperty(newListing));
-    //   }
+     function handleSubmit(e) {
+         e.preventDefault();
+         fetch("http://localhost:9292/listings", {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({
+             name: name,
+             city: city,
+             image_url: image,
+             price: price,
+             location_url: location,
+             rating: rating,
+           }),
+         })
+           .then((r) => r.json());
+      }
      
      return (
        <>

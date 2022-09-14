@@ -25,8 +25,7 @@ body{
 }
 .companyname{
   width: 70%;
-  padding-left: 10%;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
 }
 a{
@@ -39,7 +38,7 @@ ul{
 .buttons{
   font-weight: bold;
   border-radius: 10px;
-  width: 40%;
+  width: 60%;
   height: 30px;
   cursor: pointer;
 }
@@ -114,6 +113,10 @@ fieldset{
   display: flex;
   justify-content: space-between;
 }
+.listing-container{
+  display: flex;
+  justify-content: space-between;
+}
 .listing{
   width: 23%;
   
@@ -133,7 +136,7 @@ legend{
   width: 50%;
   cursor: pointer;
 }
-#footer{
+.footerwrapper{
   margin-top: 30px;
   background-color: #003580;
 }
@@ -142,19 +145,23 @@ legend{
   color: white;
   font-size: medium;
 }
-.links p{
+.socials p{
   text-align: center;
   padding: 10px;
   font-size: 20px;
   color: #ff8000;
 }
 
-.links ul {
+.socials ul {
   color: white;
   display: flex;
   list-style: none;
   text-align: center;
 
+}
+.tagtext{
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
 
 @media screen and (max-width: 647px){

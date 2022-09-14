@@ -7,7 +7,7 @@
 // ii. Log in as an owner*not yet implemented
 // iii. Access a post property form
 
-import react, { useState } from "react";
+import React, { useState } from "react";
 import PostProperty from "./PostProperty";
 
 function NewListing({ user_id, property_id, onAddOwner}){
@@ -32,29 +32,26 @@ function NewListing({ user_id, property_id, onAddOwner}){
       }     
     }
     //debugger
-    const handleSubmit  = () => {
-      console.log(name, username, email, phone);
-    }
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     fetch("http://localhost:9292/owners", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         name: name,
-    //         username: username,
-    //         email: email,
-    //         phone: phone,
-    //       }),
-    //     })
-    //       .then((r) => r.json())
-    //       .then((newOwner) => onAddOwner(newOwner));
-    //       return (
-    //         <PostProperty/>
-    //       )
+    // const handleSubmit  = () => {
+    //   console.log(name, username, email, phone);
     // }
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("http://localhost:9292/owners", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            username: username,
+            email: email,
+            phone_number: phone,
+          }),
+        })
+          .then((r) => r.json())
+          // .then((newOwner) => onAddOwner(newOwner));
+    }
 
     //controlled from the code here
     return (

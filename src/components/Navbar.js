@@ -10,6 +10,7 @@ function NavBar() {
         <li><Link to='/listings'><button className='buttons'>Add a Listing</button></Link></li>
         <li><Link to='/login'><button className='buttons'>Login</button></Link></li>
         <li><Link to='/register'><button className='buttons'>Register</button></Link></li>
+        <li><Link to='/new-owner'><button className='buttons'>Owners Account</button></Link></li>
       </ul>             
     </nav>
   );
