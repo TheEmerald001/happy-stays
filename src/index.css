@@ -110,12 +110,11 @@ fieldset{
   border: 15px solid #003580;
   border-radius: 25px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 .listing-container{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .listing{
   width: 23%;
@@ -129,7 +128,7 @@ legend{
   font-weight: 700px;
 }
 .reservebutton{
-  background-color: #003580;
+  background-color: #3daeff;
   color: white;
   font-size: medium;
   border-radius: 5px;

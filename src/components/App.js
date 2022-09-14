@@ -8,7 +8,7 @@ import Register from './Register';
 import Login from './Login';
 import PostProperty from './PostProperty';
 import NewListing from './Newlisting';
-// import Listings from "./Listings";
+import PropertyFetch from './PropertyFetch';
 import Footer from "./Footer";
 
 function App() {
