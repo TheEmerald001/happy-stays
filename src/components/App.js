@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'
-
+import { AuthProvider } from './auth';
 import '../App.css';
 import NavBar from "./Navbar";
 import Home from './Home';
@@ -10,10 +10,11 @@ import PostProperty from './PostProperty';
 import NewListing from './Newlisting';
 import PropertyFetch from './PropertyFetch';
 import Footer from "./Footer";
+import UserReservations from './UserReservations';
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <NavBar/>
       <div className='routescontainer'>
         <Routes>
@@ -22,11 +23,12 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/new-owner' element={<NewListing />} />
+          <Route path='/reserved' element={<UserReservations />} />
         </Routes>
       </div>
       <Footer/>
       
-    </>
+    </AuthProvider>
   );
 }
 
