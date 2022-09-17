@@ -99,7 +99,7 @@ function PostProperty({user_id, owner_id}) {
             onChange = {(e) => handleInputChange(e)}
             placeholder="1-10"
           />
-          <button className="proceed" type="submit">Post Property</button>  
+          <div className="centerbutton"><button className="reservebutton" type="submit">Post Property</button></div>  
           {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
         </form>
         </div>

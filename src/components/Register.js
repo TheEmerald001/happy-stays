@@ -107,7 +107,7 @@ function Register() {
                 id="password"
                 placeholder="Password: ******"
               />  
-              <button className="proceed" type="submit">Create Account</button>
+              <div className="centerbutton"><button className="reservebutton" type="submit">Create Account</button></div>
             </form>
           </div>
           

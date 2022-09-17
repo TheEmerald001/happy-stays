@@ -7,7 +7,7 @@
 }
 body{
   margin: 0;
-  background-color: white;
+  background-color: azure;
 }
 .navbar{
   width: 100%;
@@ -89,10 +89,6 @@ input {
   font-weight: 500;
   margin-bottom: 2rem;
 }
-.proceed{
-  text-align: center;
-  width: 35%;
-}
 
 button:hover {
   background-color: #c5c5c5;
@@ -133,12 +129,22 @@ legend{
 .btnspace{
   padding-left:  25%;
 }
+.alts{
+  border: 2px solid #4CAF50;
+  border-radius: 3px;
+  margin: 5px 18%;
+  width: 50%;
+  padding: 5px;
+}
+.centerbutton{
+  margin: 0 30%;
+}
 .reservebutton{
   background-color: #3daeff;
   color: white;
   font-size: medium;
   border-radius: 5px;
-  width: 40%;
+  width: 30%;
   cursor: pointer;
 }
 .footerwrapper{

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from './auth'
  
 function Login(props) {
@@ -46,7 +46,8 @@ function Login(props) {
           id="password"
         />
       </form>
-      <button onClick={handleLogin} className="reservebutton" id="reservebtn"> Login </button>
+      <div className='centerbutton'><button onClick={handleLogin} className="reservebutton" id="reservebtn"> Login </button></div>
+      <Link to='/register'><button className='alts'>Don't have an account, Create One</button>Create Account</Link>
     </div>
   );
 }

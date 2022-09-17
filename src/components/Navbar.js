@@ -8,11 +8,11 @@ function NavBar() {
   return (
     <nav className='navbar'>      
       <Link className='companyname' to='/'>Happy Stays</Link>   
-      <ul>
-        <li><Link to='/listings'><button className='buttons'>Add a Listing</button></Link></li>
-        { !auth.user && (<li><Link to='/login'><button className='buttons'>Login</button></Link></li>) }
+      <ul>        
         <li><Link to='/register'><button className='buttons'>Register</button></Link></li>
+        { !auth.user && (<li><Link to='/login'><button className='buttons'>Login</button></Link></li>) }
         <li><Link to='/new-owner'><button className='buttons'>Owners Account</button></Link></li>
+        <li><Link to='/listings'><button className='buttons'>Add a Listing</button></Link></li>
       </ul>             
     </nav>
   );

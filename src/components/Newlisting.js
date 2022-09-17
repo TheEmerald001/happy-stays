@@ -88,7 +88,7 @@ function NewListing({ user_id, property_id, onAddOwner}){
             id="setPhone"
             placeholder="Phone: 25472200000"
           />
-          <button className="proceed" type="submit">Create Account</button>
+          <div className="centerbutton"><button className="reservebutton" type="submit">Create Account</button></div>
         </form>
         </div>
       </>
